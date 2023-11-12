@@ -6,7 +6,7 @@
 /*   By: vk <vk@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:06:26 by vk                #+#    #+#             */
-/*   Updated: 2023/11/12 18:56:11 by vk               ###   ########.fr       */
+/*   Updated: 2023/11/12 21:15:03 by vk               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,4 @@ char *ft_itoa(int n)
     nbr /= 10;
   }
   return (number);
-}
-int main()
-{
-  int intmax = 0;
-  char *p = ft_itoa(intmax);
-  printf("Le retour de la fonction itoa est : %s", p);
 }
