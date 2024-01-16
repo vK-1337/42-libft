@@ -44,25 +44,21 @@ SRC = 	ft_atoi.c \
 
 OBJS = $(SRC:.c=.o)
 
-BONUS_OBJS = $(BONUS:.c=.o)
-
 SORT_OBJS  = $(SORT:.c=.o)
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
+
+GREEN = \033[0;32m
+NC = \033[0m
+YELLOW = \e[0;93m
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
-
-sort: $(OBJS) $(SORT_OBJS)
-	ar -rcs $(NAME) $(OBJS) $(SORT_OBJS)
-
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-so: $(OBJS)
-	$(CC) $(LFLAGS) -shared -o $(SHARED_NAME) $(OBJS) $(BONUS_OBJS) $(SORT_OBJS)
+	@echo "	 			+---------------------+\n\
+					|  $(YELLOW)    LIBFT $(GREEN)[OK]$(NC)     |\n\
+					+---------------------+"
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -78,4 +74,4 @@ fclean: clean
 re: fclean
 	make all
 
-.PHONY: all clean fclean re bonus test sort
+.PHONY: all clean fclean re
